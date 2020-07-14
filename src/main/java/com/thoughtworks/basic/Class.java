@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Class {
+    private String classNumber;
     public Class(String classNumber){
         this.classNumber=classNumber;
+    }
+
+    public Person getTeacher() {
+        return teacher;
     }
     public String getClassNumber() {
         return classNumber;
@@ -15,7 +20,7 @@ public class Class {
         this.classNumber = classNumber;
     }
 
-    private String classNumber;
+
     public List<Person> getStudents() {
         return students;
     }
@@ -24,9 +29,7 @@ public class Class {
         this.students = students;
     }
 
-    public Person getTeacher() {
-        return teacher;
-    }
+
 
     public void setTeacher(Person teacher) {
         this.teacher = teacher;
