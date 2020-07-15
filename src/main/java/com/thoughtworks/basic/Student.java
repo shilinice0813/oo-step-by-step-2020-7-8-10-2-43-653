@@ -16,14 +16,17 @@ public class Student extends Person {
     }
 
     public void setClas(Class clas) {
+        if(!clas.equals(this.clas)){
+            this.clas.delStudent(this);
+            this.clas.noticeAll(getName(),getAge(),clas.getClassNumber());
+            clas.noticeAll(getName(),getAge(),clas.getClassNumber());
+            clas.addStudent(this);
+        }
         this.clas = clas;
     }
 
     private Class clas;
     public void setClassNumber(String classNumber) {
-        if(this.classNumber!=classNumber){
-            this.clas.noticeAll(getName(),getAge(),classNumber);
-        }
         this.classNumber = classNumber;
     }
 
